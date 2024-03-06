@@ -1,0 +1,49 @@
+<div class="planet-card">
+  <div class="planet-card-details">
+    <div class="planet-name">
+      <div class="name" data-text="Awesome">
+        <span class="actual-text">&nbsp;{{ planet.name }}&nbsp;</span>
+        <span aria-hidden="true" class="hover-text"
+          >&nbsp;{{ planet.name }}&nbsp;</span
+        >
+      </div>
+    </div>
+    <div class="outline"></div>
+    <div class="other-details">
+      <div class="climate">
+        <span class="climate-heading">Climate :</span>
+        <span class="climate-name name">&nbsp;{{ planet.climate }}&nbsp;</span>
+      </div>
+      <div class="climate name">
+        <span class="climate-heading">population :</span>
+        <span class="climate-name"
+          >&nbsp;{{ planet.population | numberFormat }}&nbsp;</span
+        >
+      </div>
+      <div class="climate">
+        <span class="climate-heading">orbital period :</span>
+        <span class="climate-name"
+          >&nbsp;{{ planet.orbital_period }}&nbsp;</span
+        >
+      </div>
+      <div class="climate">
+        <span class="climate-heading">rotation period :</span>
+        <span class="climate-name"
+          >&nbsp;{{ planet.rotation_period }}&nbsp;</span
+        >
+      </div>
+      <div class="climate">
+        <span class="climate-heading">terrain :</span>
+        <span class="climate-name">&nbsp;{{ planet.terrain }}&nbsp;</span>
+      </div>
+    </div>
+    <div *ngIf="!viewmore" class="cta" (click)="handlePlanetViewMore()">
+      <span>Click for More Info</span>
+      <svg width="15px" height="10px" viewBox="0 0 13 10">
+        <path d="M1,5 L11,5"></path>
+        <polyline points="8 1 12 5 8 9"></polyline>
+      </svg>
+    </div>
+  </div>
+  <div class="small-cut"></div>
+</div>

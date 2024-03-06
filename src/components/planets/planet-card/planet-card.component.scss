@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.planet-card {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    position: relative;
+    min-width: 350px;
+    min-height: 450px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #000;
+    border-radius: 10px;
+
+    .planet-card-details {
+        position: absolute;
+        box-sizing: border-box;
+        padding: 10px;
+        width: calc(100% - 40px);
+        height: calc(100% - 50px);
+        border-radius: 10px;
+        background: #fff;
+        color: #000;
+
+        .planet-name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            width: 100%;
+            height: 45px;
+            color: #000;
+
+            .name {
+                margin: 0;
+                height: auto;
+                background: transparent;
+                padding: 0;
+                border: none;
+                cursor: pointer;
+            }
+
+            /* button styling */
+            .name {
+                --border-right: 0px;
+                --text-stroke-color: rgba(0, 0, 0, 0.6);
+                --animation-color: #37FF8B;
+                --fs-size: 2em;
+                letter-spacing: 3px;
+                text-decoration: none;
+                font-family: "Arial";
+                position: relative;
+                text-transform: uppercase;
+                color: transparent;
+                -webkit-text-stroke: 1px #000;
+            }
+
+            /* this is the text, when you hover on button */
+            .hover-text {
+                position: absolute;
+                box-sizing: border-box;
+                content: '';
+                color: var(--animation-color);
+                width: 0%;
+                inset: 0;
+                border-right: var(--border-right) solid var(--animation-color);
+                overflow: hidden;
+                transition: 0.5s;
+                -webkit-text-stroke: 1px var(--animation-color);
+            }
+
+            /* hover */
+            .name:hover .hover-text {
+                width: 100%;
+                filter: drop-shadow(0 0 23px var(--animation-color))
+            }
+        }
+
+        .outline {
+            width: 100%;
+            height: 2px;
+            background: red;
+        }
+
+        .other-details {
+            padding: 20px 10px;
+            height: auto;
+            font-family: "Raleway", sans-serif;
+            font-optical-sizing: auto;
+            font-size: 20px;
+            text-transform: capitalize;
+
+            .climate {
+                width: 100%;
+                box-sizing: border-box;
+                min-height: 35px;
+                height: auto;
+                margin-bottom: 5px;
+                box-sizing: border-box;
+                text-decoration: none;
+                font-family: "Arial";
+                position: relative;
+                color: transparent;
+                -webkit-text-stroke: 1px #000;
+            }
+        }
+
+    }
+
+    .cta {
+        position: relative;
+        margin: auto;
+        padding: 12px 18px;
+        transition: all 0.2s ease;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .cta:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 50px;
+        background: #b1dae7;
+        width: 45px;
+        height: 45px;
+        transition: all 0.3s ease;
+    }
+
+    .cta span {
+        position: relative;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #234567;
+    }
+
+    .cta svg {
+        position: relative;
+        top: 0;
+        margin-left: 10px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #234567;
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: all 0.3s ease;
+    }
+
+    .cta:hover:before {
+        width: 100%;
+        background: #b1dae7;
+    }
+
+    .cta:hover svg {
+        transform: translateX(0);
+    }
+
+    .cta:active {
+        transform: scale(0.95);
+    }
+
+
+    .small-cut {
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+        min-width: 100px;
+        height: 20px;
+        background: #fff;
+        color: #000;
+        clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    }
+}

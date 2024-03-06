@@ -1,0 +1,30 @@
+<div *ngIf="!viewmore" class="planets-container">
+  <ng-container *ngIf="planets; else loadingTemplate">
+    <div *ngFor="let planet of planets">
+      <planet-card [planet]="planet" (planetDetailsChanged)="handlePlanetDetailsChanged($event)"
+        (viewMoreChanged)="handleViewMoreChanged($event)"></planet-card>
+    </div>
+
+
+  </ng-container>
+
+  <ng-template #loadingTemplate>
+    <loading></loading>
+  </ng-template>
+</div>
+<div class="pagination" *ngIf="!viewmore">
+  <ul class="wrapper">
+    <button class="icon prev" [ngClass]="{'disabled': prevDisabled}" (click)="goToPrevious()" [disabled]="prevDisabled">
+      <span class="tooltip">Previous</span>
+      <span><i class="fa-solid fa-backward"></i></span>
+    </button>
+    <button class="icon next" (click)="goToNext()" [ngClass]="{'disabled': nextDisabled}" [disabled]="nextDisabled">
+      <span class="tooltip">Next</span>
+      <span><i class="fa-solid fa-forward"></i></span>
+    </button>
+  </ul>
+</div>
+<div *ngIf="viewmore" class="planets-container">
+  <planet-details [residents]="planetResult.residents" [viewmore]="viewmore"
+    (closeClicked)="handleClose()"></planet-details>
+</div>

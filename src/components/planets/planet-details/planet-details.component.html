@@ -1,0 +1,13 @@
+<div class="planet-card-details">
+  <div class="upper-cut"></div>
+  <div class="close-button" (click)="handleClose()">x</div>
+  <div class="planets-resident-info" *ngIf="residents">
+    <div *ngFor="let resident of residents">
+      <resident-info [url]="resident"></resident-info>
+    </div>
+  </div>
+  <div class="planets-resident-info" *ngIf="residents == []">
+    <span>No Resident's Available</span>
+  </div>
+
+</div>

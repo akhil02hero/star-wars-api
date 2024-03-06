@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="top-section" [style.background]="resident.skin_color">
+        <div class="border">
+            <span *ngIf="resident.gender && resident.gender != 'n/a'">{{
+                resident.gender
+                }}</span>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <span class="title">{{ resident.name }}</span>
+        <div class="row row1">
+            <div class="item">
+                <span class="big-text">{{ resident.height }}</span>
+                <span class="regular-text">Height</span>
+            </div>
+            <div class="item">
+                <span class="big-text">{{ resident.mass }}</span>
+                <span class="regular-text">Mass</span>
+            </div>
+            <div class="item" *ngIf="resident.birth_year && resident.birth_year != 'unknown'">
+                <span class="big-text">{{ resident.birth_year }}</span>
+                <span class="regular-text">DOB</span>
+            </div>
+        </div>
+    </div>
+</div>
