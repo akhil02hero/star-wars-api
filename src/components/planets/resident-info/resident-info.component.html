@@ -9,11 +9,11 @@
     <div class="bottom-section">
         <span class="title">{{ resident.name }}</span>
         <div class="row row1">
-            <div class="item">
+            <div class="item" *ngIf="resident.height && resident.height!='unknown'">
                 <span class="big-text">{{ resident.height }}</span>
                 <span class="regular-text">Height</span>
             </div>
-            <div class="item">
+            <div class="item" *ngIf="resident.mass && resident.mass!= 'unknown'">
                 <span class="big-text">{{ resident.mass }}</span>
                 <span class="regular-text">Mass</span>
             </div>
